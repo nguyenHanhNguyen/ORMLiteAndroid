@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // initialize the student database helper
         studentDbHelper = new StudentDatabaseHelper(this);
 
         final EditText editText_fname = (EditText) findViewById(R.id.editText_fName);
