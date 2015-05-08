@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ShowAllStudents"></activity>
+        <activity android:name=".ShowAllStudents"
+            android:label="@string/show_all_student"></activity>
+
+        <activity android:name=".UpdateStudent"
+            android:label="@string/update_student"></activity>
     </application>
 
 </manifest>

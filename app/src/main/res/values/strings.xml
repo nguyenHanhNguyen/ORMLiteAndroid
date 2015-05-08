@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="show_all_student">Show All Student</string>
+    <string name="update_student">Update Student</string>
 </resources>

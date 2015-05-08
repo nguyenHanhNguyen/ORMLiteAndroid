@@ -50,4 +50,8 @@ public class Student {
         return firstName;
 
     }
+
+    public int getID(){
+        return ID;
+    }
 }

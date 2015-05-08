@@ -17,15 +17,16 @@ import java.util.List;
  */
 public class StudentListItemAdapter extends BaseAdapter{
 
-    StudentDatabaseHelper studentDbHelper;
-    Dao<Student, Integer> studentDao;
+    /*StudentDatabaseHelper studentDbHelper;
+    Dao<Student, Integer> studentDao;*/
     List<Student> all_student;
     LayoutInflater inflater;
 
-    public StudentListItemAdapter(Context context) throws SQLException {
-        studentDbHelper = new StudentDatabaseHelper(context);
+    public StudentListItemAdapter(Context context, List<Student> all_student) {
+        /*studentDbHelper = new StudentDatabaseHelper(context);
         studentDao = studentDbHelper.getDao();
-        all_student = studentDao.queryForAll();
+        all_student = studentDao.queryForAll();*/
+        this.all_student = all_student;
         inflater = LayoutInflater.from(context);
     }
 
@@ -42,6 +43,10 @@ public class StudentListItemAdapter extends BaseAdapter{
 
     @Override
     public Object getItem(int position) {
+        return all_student.get(position);
+    }
+
+    public Student getStudent(int position){
         return all_student.get(position);
     }
 
