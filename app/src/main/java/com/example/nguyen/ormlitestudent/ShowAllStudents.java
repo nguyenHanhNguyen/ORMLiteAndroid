@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.j256.ormlite.dao.Dao;
@@ -48,6 +49,15 @@ public class ShowAllStudents extends Activity {
                 int student_id = student.getID();
                 intent_update.putExtra(STUDENT_ID,student_id);
                 startActivity(intent_update);
+            }
+        });
+
+        Button btn_create = (Button)findViewById(R.id.btn_create);
+        btn_create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent create = new Intent(context, MainActivity.class);
+                startActivity(create);
             }
         });
     }
