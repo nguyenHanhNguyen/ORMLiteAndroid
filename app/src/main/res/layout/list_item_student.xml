@@ -15,7 +15,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id = "@+id/txtview_fname"
-            android:textStyle="bold"
             android:padding="3dp"/>
 
     </TableRow>
@@ -35,7 +34,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id = "@+id/txtview_lname"
-            android:textStyle="bold"
             android:padding="3dp"/>
 
     </TableRow>
@@ -53,7 +51,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id = "@+id/txtview_address"
-            android:textStyle="bold"
             android:padding="3dp"/>
 
     </TableRow>

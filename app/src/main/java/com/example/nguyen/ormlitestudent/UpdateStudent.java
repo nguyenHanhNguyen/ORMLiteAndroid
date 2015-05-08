@@ -44,9 +44,9 @@ public class UpdateStudent extends Activity {
         TextView txtview_studentId = (TextView)findViewById(R.id.txtview_studentid);
         txtview_studentId.setText(String.valueOf(update_student.getID()));
 
-        EditText edittext_fname = (EditText)findViewById(R.id.editText_update_fName);
-        EditText edittext_lname = (EditText)findViewById(R.id.editText_update_lName);
-        EditText edittext_address = (EditText)findViewById(R.id.editText_update_address);
+        final EditText edittext_fname = (EditText)findViewById(R.id.editText_update_fName);
+        final EditText edittext_lname = (EditText)findViewById(R.id.editText_update_lName);
+        final EditText edittext_address = (EditText)findViewById(R.id.editText_update_address);
 
         edittext_fname.setText(update_student.getFirstName());
         edittext_lname.setText(update_student.getLastName());
@@ -64,6 +64,33 @@ public class UpdateStudent extends Activity {
                 }
                 Intent all_student_intent = new Intent(context, ShowAllStudents.class);
                 startActivity(all_student_intent);
+
+            }
+        });
+
+        Button btn_cancel = (Button)findViewById(R.id.btn_cancel);
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent all_student_intent = new Intent(context, ShowAllStudents.class);
+                startActivity(all_student_intent);
+            }
+        });
+
+        Button btn_update = (Button)findViewById(R.id.btn_update);
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Dao<Student, Integer> update_student = db.getDao();
+                    Student update = update_student.queryForId(student_id);
+                    update.firstName = edittext_fname.getText().toString();
+                    update.lastName = edittext_lname.getText().toString();
+                    update.address = edittext_address.getText().toString();
+                    update_student.update(update);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
