@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.j256.ormlite.dao.Dao;
 
@@ -91,6 +92,8 @@ public class UpdateStudent extends Activity {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                Intent all_student_intent = new Intent(context, ShowAllStudents.class);
+                startActivity(all_student_intent);
 
             }
         });
